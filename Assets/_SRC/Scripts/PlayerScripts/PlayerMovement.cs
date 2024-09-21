@@ -10,11 +10,24 @@ public class PlayerMovement : MonoBehaviour
 
     private NavMeshAgent nav;
 
-    void Start()
+    private void Start()
     {
         nav = GetComponent<NavMeshAgent>();
     }
-    void Update()
+    private void Update()
+    {
+        PlayerInput();
+    }
+
+    private void PlayerInput()
+    {
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
+        {
+            ManageMovement();
+        }
+    }
+
+    private void ManageMovement()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -22,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit,Mathf.Infinity, groundLayer))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
-            if(hit.collider.CompareTag("Ground"))
+            if (hit.collider.CompareTag("Ground"))
             {
                 Debug.Log("HITANDO CHAO");
 
