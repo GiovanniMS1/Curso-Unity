@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
     }
+
     private void Update()
     {
         PlayerInput();
