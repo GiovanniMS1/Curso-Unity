@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5884428ad061949af44c241c871f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
+  brain: {fileID: 11400000, guid: ab624cb2149409447b42ec636431cdce, type: 2}
   playerTransform: {fileID: 0}
   GFXTransform: {fileID: 1591410020012694895}
   referemcesOk: 0
@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec954e6dfd334581a9323ed7fbf1bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAttackCooldown: 0
 --- !u!114 &3300082460710896440
 MonoBehaviour:
   m_ObjectHideFlags: 0

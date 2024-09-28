@@ -22,6 +22,8 @@ public class AICombat : MonoBehaviour
     }
     public bool CheckAttack(Transform target)
     {
+        CooldownRecover();
+
         if (Vector3.Distance(transform.position, target.position) < brain.AttackRange)
         {
             if (canAttack)
@@ -46,7 +48,7 @@ public class AICombat : MonoBehaviour
         }
     }
 
-    void Attack(Transform target)
+    public void Attack(Transform target)
     {
         canAttack = false;
 

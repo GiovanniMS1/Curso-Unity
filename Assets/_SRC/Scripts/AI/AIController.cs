@@ -21,7 +21,7 @@ public class AIController : MonoBehaviour
     [Header("Reference Check")]
     [SerializeField] private bool referemcesOk;
 
-    private void Init(EnemyScriptable pBrain)
+    public void Init(EnemyScriptable pBrain)
     {
         referemcesOk = false;
 
@@ -49,7 +49,7 @@ public class AIController : MonoBehaviour
             return;
         }
 
-        if (AIStatesScript.States == AIStateType.ATTACK)
+        if (AIStatesScript.States == AIStateType.ATTACKING)
         {
             AttackBehaviour();
             return;
@@ -58,7 +58,10 @@ public class AIController : MonoBehaviour
 
     void ChaseBehaviour()
     {
-        AIMovementScript.Chase(playerTransform);
+        var success = AIMovementScript.Chase(playerTransform);
+
+        if(success == false)
+            AIStatesScript.ChangeToState(AIStateType.ATTACKING);
     }
 
     void AttackBehaviour()
