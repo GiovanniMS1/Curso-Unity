@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/EnemyData", order = 0)]
-public class EnemyScriptable: ScriptableObject
+public class EnemyScriptable : ScriptableObject
 {
-    [Header("Status")]
-    public Status status;
+    [Header("Data")]
+    public Status Status;
+    public float speed;
 
     [Header("Combat Data")]
     public float AttackRange;
     public float attackSpeed;
     public int[] AttackDamage;
 
-    [Header("Graphics")]
+    [Header("GFX")]
     public GameObject GFX;
 }
-
