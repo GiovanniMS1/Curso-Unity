@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 451610807493733872}
   - component: {fileID: 1774541508576611785}
   - component: {fileID: 1424700342065226900}
+  - component: {fileID: 498935653210332310}
   - component: {fileID: 954861333241134759}
   - component: {fileID: 4456428602406465819}
   - component: {fileID: 5422279483766377465}
   - component: {fileID: 5991536991707151232}
   m_Layer: 9
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,6 +94,20 @@ MonoBehaviour:
     Health: 0
     Armor: 0
     MagicResist: 0
+--- !u!114 &498935653210332310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258974662038880141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d00a92091bef4785c818cdd9ff14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusScript: {fileID: 0}
+  myRenderer: {fileID: 0}
 --- !u!114 &954861333241134759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,11 +162,11 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -392,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b94acd7188b574ba09fdfc1b7933e2d0, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1680,6 +1680,7 @@ GameObject:
   - component: {fileID: 1830395384}
   - component: {fileID: 1830395383}
   - component: {fileID: 1830395385}
+  - component: {fileID: 1830395387}
   - component: {fileID: 1830395386}
   m_Layer: 7
   m_Name: Player
@@ -1754,7 +1755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    Health: 0
+    Health: 100
     Armor: 0
     MagicResist: 0
 --- !u!114 &1830395386
@@ -1771,9 +1772,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Weapons:
   - {fileID: 11400000, guid: 6d3b6b4ff9719482d9775f78935d7074, type: 2}
+  AllWeapons: []
   EnemiesLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1830395387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830395381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4d00a92091bef4785c818cdd9ff14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusScript: {fileID: 0}
+  myRenderer: {fileID: 0}
 --- !u!1 &1832536156
 GameObject:
   m_ObjectHideFlags: 0

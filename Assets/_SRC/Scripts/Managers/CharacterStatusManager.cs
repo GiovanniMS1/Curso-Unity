@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,9 +11,12 @@ public class CharacterStatusManager : MonoBehaviour, IDamageable
 
     public event Action OnTakeDamage;
 
-    private void Start()
+    public void InitStatus(Status pStatus)
     {
-        status.Init();
+        status.Health = pStatus.Health;
+        status.Armor = pStatus.Armor;
+        status.MagicResist = pStatus.MagicResist;
+
     }
 
     public void TakeDamage(int amount)
@@ -22,6 +26,12 @@ public class CharacterStatusManager : MonoBehaviour, IDamageable
         status.Health -= amount;
 
         OnTakeDamage?.Invoke();
+
+        // Eventos ao tomar dano
+        // Saia sangue
+        // animacao tomar dano
+        // boneco piscando
+        //
 
         if (status.Health <= 0)
         {

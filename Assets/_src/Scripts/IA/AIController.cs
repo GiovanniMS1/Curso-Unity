@@ -17,6 +17,8 @@ public class AIController : MonoBehaviour
     private AIStates AIStatesScript;
     private AIMovement AIMovementScript;
     private AICombat AICombatScript;
+    private CharacterStatusManager AICharacterStatusManager;
+    private DamageHandler AIDamageHandler;
 
     [Header("References Check")]
     [SerializeField] private bool referencesOk;
@@ -29,14 +31,19 @@ public class AIController : MonoBehaviour
         AIStatesScript = GetComponent<AIStates>();
         AIMovementScript = GetComponent<AIMovement>();
         AICombatScript = GetComponent<AICombat>();
+        AICharacterStatusManager = GetComponent<CharacterStatusManager>();
+        AIDamageHandler = GetComponent<DamageHandler>();
 
         brain = pBrain;
 
         AICombatScript.Init(brain);
         AIMovementScript.Init(brain);
+        AICharacterStatusManager.InitStatus(brain.Status);
 
         InstantiateGraphics();
         FindPlayerReference();
+
+        AIDamageHandler.Init();
 
         referencesOk = true;
     }
@@ -82,7 +89,8 @@ public class AIController : MonoBehaviour
 
     void InstantiateGraphics()
     {
-        Instantiate(brain.GFX, GFXTransform);
+        var gfx = Instantiate(brain.GFX, GFXTransform);
+        gfx.transform.parent = this.transform;
     }
 
     void FindPlayerReference()
